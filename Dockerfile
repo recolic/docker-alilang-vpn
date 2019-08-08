@@ -15,8 +15,8 @@ ARG url_delegate=http://1.ali.recolic.org:25580/linux2.6-dg9_9_13.tar.gz
 
 WORKDIR /
 RUN wget "${url_alilang}" -O alilang.deb && wget "${url_delegate}" -O linux2.6-dg9_9_13.tar.gz && \
-    apt install -y ./alilang.deb && rm alilang.deb && \
-    tar xvzf linux2.6-dg9_9_13.tar.gz && cd dg9_9_13/DGROOT
+    apt install -y ./alilang.deb && tar xvzf linux2.6-dg9_9_13.tar.gz && \
+    rm alilang.deb linux2.6-dg9_9_13.tar.gz
 
 COPY entry_r.sh /entry_r.sh
 RUN chmod +x entry_r.sh
