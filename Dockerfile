@@ -10,12 +10,11 @@ COPY sources.list /etc/apt/sources.list
 RUN apt update && add-apt-repository ppa:mark-pcnetspec/gksu && apt update
 RUN apt update ; apt install -y libssl1.0.0 wget qt4-default libqtwebkit-dev gksu # shadowsocks
 
-ARG url_alilang=http://1.ali.recolic.org:25580/alilang.deb
-ARG url_delegate=http://1.ali.recolic.org:25580/linux2.6-dg9_9_13.tar.gz
+COPY pkgs/alilang.deb /
+COPY pkgs/linux2.6-dg9_9_13.tar.gz /
 
 WORKDIR /
-RUN wget "${url_alilang}" -O alilang.deb && wget "${url_delegate}" -O linux2.6-dg9_9_13.tar.gz && \
-    apt install -y ./alilang.deb && tar xvzf linux2.6-dg9_9_13.tar.gz && \
+RUN apt install -y ./alilang.deb && tar xvzf linux2.6-dg9_9_13.tar.gz && \
     rm alilang.deb linux2.6-dg9_9_13.tar.gz
 
 COPY entry_r.sh /entry_r.sh
