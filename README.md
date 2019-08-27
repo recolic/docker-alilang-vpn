@@ -16,3 +16,8 @@ Login and enable the VPN.
 
 4. Enjoy!
 
+## Recommand: Alilang in VM (Only windows alilang supports VPN, linux alilang doesn't)
+
+Download virtualbox image from https://recolic.net/go/bsImage . Follow the GUIDE.txt on desktop.
+
+Note, the VM usually need 1GB RAM and 1 Core CPU, and it's better to give it 2 Core CPU for the first run.
